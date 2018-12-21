@@ -13,11 +13,12 @@ public class JasyptUtil {
 
     /**
      * Jasypt生成加密结果
+     *
      * @param password 配置文件中设定的加密密码 jasypt.encryptor.password
-     * @param value 待加密值
+     * @param value    待加密值
      * @return
      */
-    public static String encyptPwd(String password,String value){
+    public static String encyptPwd(String password, String value) {
         PooledPBEStringEncryptor encryptor = new PooledPBEStringEncryptor();
         encryptor.setConfig(cryptor(password));
         String result = encryptor.encrypt(value);
@@ -26,18 +27,19 @@ public class JasyptUtil {
 
     /**
      * 解密
+     *
      * @param password 配置文件中设定的加密密码 jasypt.encryptor.password
-     * @param value 待解密密文
+     * @param value    待解密密文
      * @return
      */
-    public static String decyptPwd(String password,String value){
+    public static String decyptPwd(String password, String value) {
         PooledPBEStringEncryptor encryptor = new PooledPBEStringEncryptor();
         encryptor.setConfig(cryptor(password));
         String result = encryptor.decrypt(value);
         return result;
     }
 
-    public static SimpleStringPBEConfig cryptor(String password){
+    public static SimpleStringPBEConfig cryptor(String password) {
         SimpleStringPBEConfig config = new SimpleStringPBEConfig();
         config.setPassword(password);
         config.setAlgorithm("PBEWithMD5AndDES");
@@ -49,11 +51,11 @@ public class JasyptUtil {
         return config;
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         //加密
-        System.out.println(encyptPwd("xboot","123456"));
+        System.out.println(encyptPwd("sudao", "root"));
         //解密
-        System.out.println(decyptPwd("xboot","F4B0s6u9xcDw3V+P0qC4CA=="));
+        System.out.println(decyptPwd("sudao", "ifHaU2JoQvcwish53NPgvA=="));
     }
 }

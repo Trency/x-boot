@@ -12,6 +12,7 @@ public interface EsLogService {
 
     /**
      * 添加日志
+     *
      * @param esLog
      * @return
      */
@@ -19,6 +20,7 @@ public interface EsLogService {
 
     /**
      * 通过id删除日志
+     *
      * @param id
      */
     void deleteLog(String id);
@@ -30,6 +32,7 @@ public interface EsLogService {
 
     /**
      * 分页搜索获取日志
+     *
      * @param type
      * @param key
      * @param searchVo

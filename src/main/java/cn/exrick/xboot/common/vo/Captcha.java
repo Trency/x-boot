@@ -9,7 +9,7 @@ import java.io.Serializable;
  * @author Exrickx
  */
 @Data
-public class Captcha implements Serializable{
+public class Captcha implements Serializable {
 
     @ApiModelProperty(value = "验证码id")
     private String captchaId;

@@ -7,12 +7,14 @@ import java.util.List;
 
 /**
  * 用户角色数据处理层
+ *
  * @author Exrickx
  */
-public interface UserRoleDao extends XbootBaseDao<UserRole,String> {
+public interface UserRoleDao extends XbootBaseDao<UserRole, String> {
 
     /**
      * 通过roleId查找
+     *
      * @param roleId
      * @return
      */
@@ -20,6 +22,7 @@ public interface UserRoleDao extends XbootBaseDao<UserRole,String> {
 
     /**
      * 删除用户角色
+     *
      * @param userId
      */
     void deleteByUserId(String userId);

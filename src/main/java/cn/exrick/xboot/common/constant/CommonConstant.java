@@ -3,6 +3,7 @@ package cn.exrick.xboot.common.constant;
 
 /**
  * 常量
+ *
  * @author Exrickx
  */
 public interface CommonConstant {

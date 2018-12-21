@@ -7,12 +7,14 @@ import java.util.List;
 
 /**
  * 字典接口
+ *
  * @author Exrick
  */
-public interface DictService extends XbootBaseService<Dict,String> {
+public interface DictService extends XbootBaseService<Dict, String> {
 
     /**
      * 通过type获取
+     *
      * @param type
      * @return
      */
@@ -20,6 +22,7 @@ public interface DictService extends XbootBaseService<Dict,String> {
 
     /**
      * 模糊搜索
+     *
      * @param key
      * @return
      */

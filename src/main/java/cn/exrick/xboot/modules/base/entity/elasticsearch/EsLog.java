@@ -6,7 +6,10 @@ import cn.exrick.xboot.common.utils.SnowFlakeUtil;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
-import org.springframework.data.elasticsearch.annotations.*;
+import org.springframework.data.elasticsearch.annotations.DateFormat;
+import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
 
 import javax.persistence.Id;
 import java.io.Serializable;
@@ -16,11 +19,12 @@ import java.util.Map;
 
 /**
  * Elasticsearch文档实体类
+ *
  * @author Exrickx
  */
 @Data
 @Document(indexName = "log", type = "log", shards = 1, replicas = 0, refreshInterval = "-1")
-public class EsLog implements Serializable{
+public class EsLog implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -74,6 +78,7 @@ public class EsLog implements Serializable{
 
     /**
      * 转换请求参数为Json
+     *
      * @param paramMap
      */
     public void setMapToParams(Map<String, String[]> paramMap) {

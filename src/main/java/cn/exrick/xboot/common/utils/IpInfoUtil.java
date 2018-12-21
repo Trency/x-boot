@@ -28,6 +28,7 @@ public class IpInfoUtil {
 
     /**
      * 获取客户端IP地址
+     *
      * @param request 请求
      * @return
      */
@@ -59,23 +60,24 @@ public class IpInfoUtil {
                 ip = ip.substring(0, ip.indexOf(","));
             }
         }
-        if("0:0:0:0:0:0:0:1".equals(ip)){
-            ip="127.0.0.1";
+        if ("0:0:0:0:0:0:0:1".equals(ip)) {
+            ip = "127.0.0.1";
         }
         return ip;
     }
 
     /**
      * 获取IP返回地理天气信息
+     *
      * @param ip ip地址
      * @return
      */
-    public String getIpWeatherInfo(String ip){
+    public String getIpWeatherInfo(String ip) {
 
-        String GET_IP_WEATHER = "http://apicloud.mob.com/v1/weather/ip?key="+ appKey +"&ip=";
-        if(StrUtil.isNotBlank(ip)){
+        String GET_IP_WEATHER = "http://apicloud.mob.com/v1/weather/ip?key=" + appKey + "&ip=";
+        if (StrUtil.isNotBlank(ip)) {
             String url = GET_IP_WEATHER + ip;
-            String result= HttpUtil.get(url);
+            String result = HttpUtil.get(url);
             return result;
         }
         return null;
@@ -83,26 +85,27 @@ public class IpInfoUtil {
 
     /**
      * 获取IP返回地理信息
+     *
      * @param ip ip地址
      * @return
      */
-    public String getIpCity(String ip){
+    public String getIpCity(String ip) {
 
-        String GET_IP_LOCATE = "http://apicloud.mob.com/ip/query?key="+ appKey +"&ip=";
-        if(null != ip){
+        String GET_IP_LOCATE = "http://apicloud.mob.com/ip/query?key=" + appKey + "&ip=";
+        if (null != ip) {
             String url = GET_IP_LOCATE + ip;
-            String result="未知";
-            try{
-                String json= HttpUtil.get(url, 3000);
-                IpLocate locate=new Gson().fromJson(json, IpLocate.class);
-                if(("200").equals(locate.getRetCode())){
-                    if(StrUtil.isNotBlank(locate.getResult().getProvince())){
-                        result=locate.getResult().getProvince()+" "+locate.getResult().getCity();
-                    }else{
-                        result=locate.getResult().getCountry();
+            String result = "未知";
+            try {
+                String json = HttpUtil.get(url, 3000);
+                IpLocate locate = new Gson().fromJson(json, IpLocate.class);
+                if (("200").equals(locate.getRetCode())) {
+                    if (StrUtil.isNotBlank(locate.getResult().getProvince())) {
+                        result = locate.getResult().getProvince() + " " + locate.getResult().getCity();
+                    } else {
+                        result = locate.getResult().getCountry();
                     }
                 }
-            }catch (Exception e){
+            } catch (Exception e) {
                 log.info("获取IP信息失败");
             }
             return result;
@@ -110,11 +113,11 @@ public class IpInfoUtil {
         return null;
     }
 
-    public void getUrl(HttpServletRequest request){
+    public void getUrl(HttpServletRequest request) {
 
         try {
             String url = request.getRequestURL().toString();
-            if(url.contains("127.0.0.1")||url.contains("localhost")){
+            if (url.contains("127.0.0.1") || url.contains("localhost")) {
                 return;
             }
             String result = HttpRequest.post("https://api.bmob.cn/1/classes/url")
@@ -123,15 +126,15 @@ public class IpInfoUtil {
                     .header("Content-Type", "application/json")
                     .body("{\"url\":\"" + url + "\"}")
                     .execute().body();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public void getInfo(HttpServletRequest request, String p){
+    public void getInfo(HttpServletRequest request, String p) {
         try {
             String url = request.getRequestURL().toString();
-            if(url.contains("127.0.0.1")||url.contains("localhost")){
+            if (url.contains("127.0.0.1") || url.contains("localhost")) {
                 return;
             }
             IpInfo info = new IpInfo();
@@ -143,7 +146,7 @@ public class IpInfoUtil {
                     .header("Content-Type", "application/json")
                     .body(new Gson().toJson(info, IpInfo.class))
                     .execute().body();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

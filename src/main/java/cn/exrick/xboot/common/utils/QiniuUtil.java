@@ -50,26 +50,26 @@ public class QiniuUtil {
     /**
      * 构造一个带指定Zone对象的配置类 zone2华南
      */
-    public Configuration getConfiguration(){
+    public Configuration getConfiguration() {
 
         Configuration cfg = null;
-        if(zone.equals(0)){
+        if (zone.equals(0)) {
             cfg = new Configuration(Zone.zone0());
-        }else if(zone.equals(1)){
+        } else if (zone.equals(1)) {
             cfg = new Configuration(Zone.zone1());
-        }else if(zone.equals(2)){
+        } else if (zone.equals(2)) {
             cfg = new Configuration(Zone.zone2());
-        }else if(zone.equals(3)){
+        } else if (zone.equals(3)) {
             cfg = new Configuration(Zone.zoneNa0());
-        }else if(zone.equals(4)){
+        } else if (zone.equals(4)) {
             cfg = new Configuration(Zone.zoneAs0());
-        }else {
+        } else {
             cfg = new Configuration(Zone.autoZone());
         }
         return cfg;
     }
 
-    public UploadManager getUploadManager(Configuration cfg){
+    public UploadManager getUploadManager(Configuration cfg) {
 
         UploadManager uploadManager = new UploadManager(cfg);
         return uploadManager;
@@ -77,8 +77,9 @@ public class QiniuUtil {
 
     /**
      * 文件路径上传
+     *
      * @param filePath
-     * @param key   文件名
+     * @param key      文件名
      * @return
      */
     public String qiniuUpload(String filePath, String key) {
@@ -97,6 +98,7 @@ public class QiniuUtil {
 
     /**
      * 文件流上传
+     *
      * @param file
      * @param key  文件名
      * @return
@@ -117,6 +119,7 @@ public class QiniuUtil {
 
     /**
      * Base64上传
+     *
      * @param data64
      * @return
      */

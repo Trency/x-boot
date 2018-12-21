@@ -13,6 +13,7 @@ public interface EsLogDao extends ElasticsearchRepository<EsLog, String> {
 
     /**
      * 通过类型获取
+     *
      * @param type
      * @return
      */

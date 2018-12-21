@@ -20,6 +20,7 @@ import java.lang.reflect.Method;
 
 /**
  * 限流拦截器
+ *
  * @author Exrickx
  */
 @Slf4j
@@ -57,7 +58,7 @@ public class LimitRaterInterceptor extends HandlerInterceptorAdapter {
             throw new XbootException("你手速怎么这么快，请点慢一点");
         }
 
-        if(rateLimitEnable){
+        if (rateLimitEnable) {
             String token2 = redisRaterLimiter.acquireTokenFromBucket(CommonConstant.LIMIT_ALL, limit, timeout);
             if (StrUtil.isBlank(token2)) {
                 throw new XbootException("当前访问总人数太多啦，请稍后再试");
@@ -76,7 +77,7 @@ public class LimitRaterInterceptor extends HandlerInterceptorAdapter {
                     throw new XbootException("当前访问人数太多啦，请稍后再试");
                 }
             }
-        }catch (Exception e){
+        } catch (Exception e) {
 
         }
 

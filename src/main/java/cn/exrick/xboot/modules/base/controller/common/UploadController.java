@@ -12,7 +12,10 @@ import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
@@ -37,13 +40,13 @@ public class UploadController {
     @Autowired
     private IpInfoUtil ipInfoUtil;
 
-    @RequestMapping(value = "/file",method = RequestMethod.POST)
+    @RequestMapping(value = "/file", method = RequestMethod.POST)
     @ApiOperation(value = "文件上传")
     public Result<Object> upload(@RequestParam("file") MultipartFile file,
                                  HttpServletRequest request) {
 
         // IP限流 在线Demo所需 5分钟限1个请求
-        String token = redisRaterLimiter.acquireTokenFromBucket("upload:"+ipInfoUtil.getIpAddr(request), 1, 300000);
+        String token = redisRaterLimiter.acquireTokenFromBucket("upload:" + ipInfoUtil.getIpAddr(request), 1, 300000);
         if (StrUtil.isBlank(token)) {
             throw new XbootException("上传那么多干嘛，等等再传吧");
         }
@@ -53,7 +56,7 @@ public class UploadController {
         try {
             FileInputStream inputStream = (FileInputStream) file.getInputStream();
             //上传七牛云服务器
-            result = qiniuUtil.qiniuInputStreamUpload(inputStream,fileName);
+            result = qiniuUtil.qiniuInputStreamUpload(inputStream, fileName);
         } catch (Exception e) {
             log.error(e.toString());
             return new ResultUtil<Object>().setErrorMsg(e.toString());

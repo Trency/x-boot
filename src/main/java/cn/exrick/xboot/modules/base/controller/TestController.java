@@ -11,7 +11,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @author Exrickx
@@ -26,11 +28,11 @@ public class TestController {
     @Autowired
     private RedisDistributedLockTemplate lockTemplate;
 
-    @RequestMapping(value = "/lockAndLimit",method = RequestMethod.GET)
+    @RequestMapping(value = "/lockAndLimit", method = RequestMethod.GET)
     @RateLimiter(limit = 1, timeout = 5000)
     @ApiOperation(value = "同步锁限流测试")
     @ResponseBody
-    public Result<Object> test(){
+    public Result<Object> test() {
 
         lockTemplate.execute("订单流水号", 5000, new Callback() {
             @Override

@@ -8,12 +8,14 @@ import java.util.List;
 
 /**
  * 角色接口
+ *
  * @author Exrickx
  */
-public interface RoleService extends XbootBaseService<Role,String> {
+public interface RoleService extends XbootBaseService<Role, String> {
 
     /**
      * 获取默认角色
+     *
      * @param defaultRole
      * @return
      */

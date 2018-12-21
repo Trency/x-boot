@@ -31,7 +31,7 @@ import java.util.List;
 @RequestMapping("/xboot/dictData")
 @CacheConfig(cacheNames = "dictData")
 @Transactional
-public class DictDataController{
+public class DictDataController {
 
     @Autowired
     private DictService dictService;
@@ -42,19 +42,19 @@ public class DictDataController{
     @Autowired
     private StringRedisTemplate redisTemplate;
 
-    @RequestMapping(value = "/getByCondition",method = RequestMethod.GET)
+    @RequestMapping(value = "/getByCondition", method = RequestMethod.GET)
     @ApiOperation(value = "多条件分页获取用户列表")
     public Result<Page<DictData>> getByCondition(@ModelAttribute DictData dictData,
-                                                 @ModelAttribute PageVo pageVo){
+                                                 @ModelAttribute PageVo pageVo) {
 
         Page<DictData> page = dictDataService.findByCondition(dictData, PageUtil.initPage(pageVo));
         return new ResultUtil<Page<DictData>>().setData(page);
     }
 
-    @RequestMapping(value = "/getByType/{type}",method = RequestMethod.GET)
+    @RequestMapping(value = "/getByType/{type}", method = RequestMethod.GET)
     @ApiOperation(value = "通过类型获取")
     @Cacheable(key = "#type")
-    public Result<Object> getByType(@PathVariable String type){
+    public Result<Object> getByType(@PathVariable String type) {
 
         Dict dict = dictService.findByType(type);
         if (dict == null) {
@@ -64,9 +64,9 @@ public class DictDataController{
         return new ResultUtil<Object>().setData(list);
     }
 
-    @RequestMapping(value = "/add",method = RequestMethod.POST)
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
     @ApiOperation(value = "添加")
-    public Result<Object> add(@ModelAttribute DictData dictData){
+    public Result<Object> add(@ModelAttribute DictData dictData) {
 
         Dict dict = dictService.get(dictData.getDictId());
         if (dict == null) {
@@ -74,30 +74,30 @@ public class DictDataController{
         }
         dictDataService.save(dictData);
         // 删除缓存
-        redisTemplate.delete("dictData::"+dict.getType());
+        redisTemplate.delete("dictData::" + dict.getType());
         return new ResultUtil<Object>().setSuccessMsg("添加成功");
     }
 
-    @RequestMapping(value = "/edit",method = RequestMethod.POST)
+    @RequestMapping(value = "/edit", method = RequestMethod.POST)
     @ApiOperation(value = "编辑")
-    public Result<Object> edit(@ModelAttribute DictData dictData){
+    public Result<Object> edit(@ModelAttribute DictData dictData) {
 
         dictDataService.update(dictData);
         // 删除缓存
         Dict dict = dictService.get(dictData.getDictId());
-        redisTemplate.delete("dictData::"+dict.getType());
+        redisTemplate.delete("dictData::" + dict.getType());
         return new ResultUtil<Object>().setSuccessMsg("编辑成功");
     }
 
-    @RequestMapping(value = "/delByIds/{ids}",method = RequestMethod.DELETE)
+    @RequestMapping(value = "/delByIds/{ids}", method = RequestMethod.DELETE)
     @ApiOperation(value = "批量通过id删除")
-    public Result<Object> delByIds(@PathVariable String[] ids){
+    public Result<Object> delByIds(@PathVariable String[] ids) {
 
-        for(String id : ids){
+        for (String id : ids) {
             Dict dict = dictService.get(id);
             dictDataService.delete(id);
             // 删除缓存
-            redisTemplate.delete("dictData::"+dict.getType());
+            redisTemplate.delete("dictData::" + dict.getType());
         }
         return new ResultUtil<Object>().setSuccessMsg("批量通过id删除数据成功");
     }

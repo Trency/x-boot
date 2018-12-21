@@ -4,9 +4,12 @@ import cn.exrick.xboot.base.BaseEntity;
 import cn.exrick.xboot.common.utils.SnowFlakeUtil;
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -28,12 +31,29 @@ public class SdLoanActivity extends BaseEntity {
     @ApiModelProperty(value = "活动主键，唯一标识")
     private String activityId = String.valueOf(SnowFlakeUtil.getFlowIdInstance().nextId());
 
-    private String partionId;        // 项目主键
-    private Long activityExtend;        // 活动延长天数
-    private String activityName;        // 活动名称
-    private String activityImg;        // 活动图片
-    private String activityStatus;        // 活动状态(待发布，已发布，终止)
-    private Date activityStarttime;        // 活动开始时间
-    private Date activityEndtime;        // 活动结束时间
+    @ApiModelProperty(value = "项目主键")
+    private String partionId;
+
+    @ApiModelProperty(value = "活动延长天数")
+    private Long activityExtend;
+
+    @ApiModelProperty(value = "活动名称")
+    private String activityName;
+
+    @ApiModelProperty(value = "活动图片")
+    private String activityImg;
+
+    @ApiModelProperty(value = "活动状态(待发布，已发布，终止)")
+    private String activityStatus;
+
+    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @ApiModelProperty(value = "活动开始时间")
+    private Date activityStarttime;
+
+    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @ApiModelProperty(value = "活动结束时间")
+    private Date activityEndtime;
 
 }

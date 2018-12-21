@@ -1,6 +1,6 @@
 package cn.exrick.xboot.modules.back.controller;
 
-import cn.exrick.xboot.base.XbootBaseController;
+import cn.exrick.xboot.base.BaseController;
 import cn.exrick.xboot.modules.back.entity.SdLoanPushMessage;
 import cn.exrick.xboot.modules.back.service.SdLoanPushMessageService;
 import io.swagger.annotations.Api;
@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(description = "消息推送管理接口")
 @RequestMapping("/xboot/sdLoanPushMessage")
 @Transactional
-public class SdLoanPushMessageController extends XbootBaseController<SdLoanPushMessage, String> {
+public class SdLoanPushMessageController extends BaseController<SdLoanPushMessage, String> {
 
     @Autowired
     private SdLoanPushMessageService sdLoanPushMessageService;

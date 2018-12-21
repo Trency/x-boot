@@ -1,6 +1,6 @@
 package cn.exrick.xboot.modules.back.dao;
 
-import cn.exrick.xboot.base.XbootBaseDao;
+import cn.exrick.xboot.base.BaseDao;
 import cn.exrick.xboot.modules.back.entity.SdLoanProduct;
 
 /**
@@ -8,6 +8,6 @@ import cn.exrick.xboot.modules.back.entity.SdLoanProduct;
  *
  * @author
  */
-public interface SdLoanProductDao extends XbootBaseDao<SdLoanProduct, String> {
+public interface SdLoanProductDao extends BaseDao<SdLoanProduct, String> {
 
 }

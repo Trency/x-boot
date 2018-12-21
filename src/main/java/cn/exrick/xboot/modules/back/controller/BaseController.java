@@ -1,6 +1,6 @@
 package cn.exrick.xboot.modules.back.controller;
 
-import cn.exrick.xboot.base.XbootBaseController;
+import cn.exrick.xboot.base.BaseController;
 import cn.exrick.xboot.modules.back.entity.SdLoanFeedback;
 import cn.exrick.xboot.modules.back.service.SdLoanFeedbackService;
 import io.swagger.annotations.Api;
@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(description = "用户反馈管理接口")
 @RequestMapping("/xboot/sdLoanFeedback")
 @Transactional
-public class SdLoanFeedbackController extends XbootBaseController<SdLoanFeedback, String> {
+public class BaseController extends BaseController<SdLoanFeedback, String> {
 
     @Autowired
     private SdLoanFeedbackService sdLoanFeedbackService;

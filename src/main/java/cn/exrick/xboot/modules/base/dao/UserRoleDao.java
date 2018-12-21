@@ -1,6 +1,6 @@
 package cn.exrick.xboot.modules.base.dao;
 
-import cn.exrick.xboot.base.XbootBaseDao;
+import cn.exrick.xboot.base.BaseDao;
 import cn.exrick.xboot.modules.base.entity.UserRole;
 
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.List;
  *
  * @author Exrickx
  */
-public interface UserRoleDao extends XbootBaseDao<UserRole, String> {
+public interface UserRoleDao extends BaseDao<UserRole, String> {
 
     /**
      * 通过roleId查找

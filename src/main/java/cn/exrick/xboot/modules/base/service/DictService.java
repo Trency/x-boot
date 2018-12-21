@@ -1,6 +1,6 @@
 package cn.exrick.xboot.modules.base.service;
 
-import cn.exrick.xboot.base.XbootBaseService;
+import cn.exrick.xboot.base.BaseService;
 import cn.exrick.xboot.modules.base.entity.Dict;
 
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.List;
  *
  * @author Exrick
  */
-public interface DictService extends XbootBaseService<Dict, String> {
+public interface DictService extends BaseService<Dict, String> {
 
     /**
      * 通过type获取

@@ -1,6 +1,6 @@
 package cn.exrick.xboot.modules.base.dao;
 
-import cn.exrick.xboot.base.XbootBaseDao;
+import cn.exrick.xboot.base.BaseDao;
 import cn.exrick.xboot.modules.base.entity.DictData;
 
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.List;
  *
  * @author Exrick
  */
-public interface DictDataDao extends XbootBaseDao<DictData, String> {
+public interface DictDataDao extends BaseDao<DictData, String> {
 
 
     /**

@@ -27,21 +27,52 @@ public class SdLoanProduct extends BaseEntity {
     @ApiModelProperty(value = "贷款产品主键，唯一标识")
     private String productId = String.valueOf(SnowFlakeUtil.getFlowIdInstance().nextId());
 
-    private String title;        // 标题
-    private String subTitle;        // 子标题
-    private String coverImage;        // 封面图
-    private Long productAmount;        // 贷款金额
-    private Long interestAmount;        // 利息金额
-    private Double interestRate;        // 利率
-    private Double violateRate;        // 违约金利率
-    private String violateType;        // 违约金类型,COMPOUND ：复利,SIMPLE ：单利
-    private Long lendDays;        // 借款天数
-    private Long stock;        // 库存
-    private Long extend;        // 允许延长天数
-    private String productName;        // 产品名称
-    private String description;        // 产品描述
-    private String simpleRemark;        // 简要介绍
-    private String recommendDescription;        // 推荐描述
-    private String productStatus;        // 产品状态 UN_SUBMIT-未提交,WAIT_UP-待上架,UP-已上架,DOWN-已下架
+    @ApiModelProperty(value = "标题")
+    private String title;
+
+    @ApiModelProperty(value = "子标题")
+    private String subTitle;
+
+    @ApiModelProperty(value = "封面图")
+    private String coverImage;
+
+    @ApiModelProperty(value = "贷款金额")
+    private Long productAmount;
+
+    @ApiModelProperty(value = "利息金额")
+    private Long interestAmount;
+
+    @ApiModelProperty(value = "利率")
+    private Double interestRate;
+
+    @ApiModelProperty(value = "违约金利率")
+    private Double violateRate;
+
+    @ApiModelProperty(value = "违约金类型,COMPOUND ：复利,SIMPLE ：单利")
+    private String violateType;
+
+    @ApiModelProperty(value = "借款天数")
+    private Long lendDays;
+
+    @ApiModelProperty(value = "库存")
+    private Long stock;
+
+    @ApiModelProperty(value = "允许延长天数")
+    private Long extend;
+
+    @ApiModelProperty(value = "产品名称")
+    private String productName;
+
+    @ApiModelProperty(value = "产品描述")
+    private String description;
+
+    @ApiModelProperty(value = "简要介绍")
+    private String simpleRemark;
+
+    @ApiModelProperty(value = "推荐描述")
+    private String recommendDescription;
+
+    @ApiModelProperty(value = "产品状态 UN_SUBMIT-未提交,WAIT_UP-待上架,UP-已上架,DOWN-已下架")
+    private String productStatus;
 
 }

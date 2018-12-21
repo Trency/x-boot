@@ -1,6 +1,6 @@
 package cn.exrick.xboot.modules.back.controller;
 
-import cn.exrick.xboot.base.XbootBaseController;
+import cn.exrick.xboot.base.BaseController;
 import cn.exrick.xboot.modules.back.entity.SdLoanFeatured;
 import cn.exrick.xboot.modules.back.service.SdLoanFeaturedService;
 import io.swagger.annotations.Api;
@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(description = "推荐位管理接口")
 @RequestMapping("/xboot/sdLoanFeatured")
 @Transactional
-public class SdLoanFeaturedController extends XbootBaseController<SdLoanFeatured, String> {
+public class SdLoanFeaturedController extends BaseController<SdLoanFeatured, String> {
 
     @Autowired
     private SdLoanFeaturedService sdLoanFeaturedService;

@@ -26,10 +26,22 @@ public class SdLoanFeatured extends BaseEntity {
     @TableId
     @ApiModelProperty(value = "推荐位主键，唯一标识")
     private String featuredId = String.valueOf(SnowFlakeUtil.getFlowIdInstance().nextId());
-    private String featuredCode;        // 推荐位code,前端页面按照code字段获取推荐位的信息
-    private String featuredType;        // 推荐位类型
-    private String featuredName;        // 推荐位名称
-    private String featuredImage;        // 推荐位图
-    private String urlHref;        // 跳转链接
-    private String featuredStatus;        // 是否启用:ENABLE-正常| DISABLE-禁用
+
+    @ApiModelProperty(value = "推荐位code,前端页面按照code字段获取推荐位的信息")
+    private String featuredCode;
+
+    @ApiModelProperty(value = "推荐位类型")
+    private String featuredType;
+
+    @ApiModelProperty(value = "推荐位名称")
+    private String featuredName;
+
+    @ApiModelProperty(value = "推荐位图")
+    private String featuredImage;
+
+    @ApiModelProperty(value = "跳转链接")
+    private String urlHref;
+
+    @ApiModelProperty(value = "是否启用:ENABLE-正常| DISABLE-禁用")
+    private String featuredStatus;
 }

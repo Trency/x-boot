@@ -26,12 +26,29 @@ public class SdLoanDunning extends BaseEntity {
     @TableId
     @ApiModelProperty(value = "电话本表id，唯一标识")
     private String dunningId = String.valueOf(SnowFlakeUtil.getFlowIdInstance().nextId());
-    private String userId;//用户ID
-    private String userName;//用户姓名
-    private String dunningCellphone;        // 被催收人电话
-    private String lendId;        // 所属订单ID
-    private String lendOrderNo;        // 贷款流水号
-    private String dunningRemark;        // 催收备注
-    private Long dunningNum;        // 催收次数
-    private String dunningName;        // 催收人
+
+    @ApiModelProperty(value = "用户ID")
+    private String userId;
+
+    @ApiModelProperty(value = "用户姓名")
+    private String userName;
+
+    @ApiModelProperty(value = "被催收人电话")
+    private String dunningCellphone;
+
+    @ApiModelProperty(value = "所属订单ID")
+    private String lendId;
+
+    @ApiModelProperty(value = "贷款流水号")
+    private String lendOrderNo;
+
+    @ApiModelProperty(value = "催收备注")
+    private String dunningRemark;
+
+    @ApiModelProperty(value = "催收次数")
+    private Long dunningNum;
+
+    @ApiModelProperty(value = "催收人")
+    private String dunningName;
+
 }

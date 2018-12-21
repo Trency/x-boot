@@ -1,6 +1,6 @@
 package cn.exrick.xboot.modules.back.controller;
 
-import cn.exrick.xboot.base.XbootBaseController;
+import cn.exrick.xboot.base.BaseController;
 import cn.exrick.xboot.modules.back.entity.SdUserLoanLimitLog;
 import cn.exrick.xboot.modules.back.service.SdUserLoanLimitLogService;
 import io.swagger.annotations.Api;
@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(description = "贷款额度变动记录管理接口")
 @RequestMapping("/xboot/sdUserLoanLimitLog")
 @Transactional
-public class SdUserLoanLimitLogController extends XbootBaseController<SdUserLoanLimitLog, String> {
+public class SdUserLoanLimitLogController extends BaseController<SdUserLoanLimitLog, String> {
 
     @Autowired
     private SdUserLoanLimitLogService sdUserLoanLimitLogService;

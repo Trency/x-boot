@@ -27,9 +27,16 @@ public class SdLoanUserRelationship extends BaseEntity {
     @ApiModelProperty(value = "用户亲戚主键，唯一标识")
     private String relationshipId = String.valueOf(SnowFlakeUtil.getFlowIdInstance().nextId());
 
-    private String userId;        // 用户主键
-    private String contactRelationship;        // 联系人关系
-    private String contactName;        // 联系人姓名
-    private String contactTel;        // 联系人电话
+    @ApiModelProperty(value = "用户主键")
+    private String userId;
+
+    @ApiModelProperty(value = "联系人关系")
+    private String contactRelationship;
+
+    @ApiModelProperty(value = "联系人姓名")
+    private String contactName;
+
+    @ApiModelProperty(value = "联系人电话")
+    private String contactTel;
 
 }

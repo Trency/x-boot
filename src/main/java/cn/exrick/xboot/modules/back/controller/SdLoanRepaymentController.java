@@ -1,6 +1,6 @@
 package cn.exrick.xboot.modules.back.controller;
 
-import cn.exrick.xboot.base.XbootBaseController;
+import cn.exrick.xboot.base.BaseController;
 import cn.exrick.xboot.modules.back.entity.SdLoanRepayment;
 import cn.exrick.xboot.modules.back.service.SdLoanRepaymentService;
 import io.swagger.annotations.Api;
@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(description = "还款表管理接口")
 @RequestMapping("/xboot/sdLoanRepayment")
 @Transactional
-public class SdLoanRepaymentController extends XbootBaseController<SdLoanRepayment, String> {
+public class SdLoanRepaymentController extends BaseController<SdLoanRepayment, String> {
 
     @Autowired
     private SdLoanRepaymentService sdLoanRepaymentService;

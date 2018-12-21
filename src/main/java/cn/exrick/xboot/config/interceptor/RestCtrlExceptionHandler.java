@@ -1,7 +1,8 @@
-package cn.exrick.xboot.config.exception;
+package cn.exrick.xboot.config.interceptor;
 
 import cn.exrick.xboot.common.utils.ResultUtil;
 import cn.exrick.xboot.common.vo.Result;
+import cn.exrick.xboot.config.exception.XbootException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -24,7 +25,7 @@ public class RestCtrlExceptionHandler {
             errorMsg = e.getMsg();
             log.error(e.toString());
         }
-        return new ResultUtil<>().setErrorMsg(500, errorMsg);
+        return ResultUtil.errorMsg(500, errorMsg);
     }
 
     @ExceptionHandler(Exception.class)
@@ -36,6 +37,6 @@ public class RestCtrlExceptionHandler {
             errorMsg = e.getMessage();
             log.error(e.toString());
         }
-        return new ResultUtil<>().setErrorMsg(500, errorMsg);
+        return ResultUtil.errorMsg(500, errorMsg);
     }
 }

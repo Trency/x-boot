@@ -1,6 +1,6 @@
 package cn.exrick.xboot.modules.back.controller;
 
-import cn.exrick.xboot.base.XbootBaseController;
+import cn.exrick.xboot.base.BaseController;
 import cn.exrick.xboot.modules.back.entity.SdLoanTelephonebook;
 import cn.exrick.xboot.modules.back.service.SdLoanTelephonebookService;
 import io.swagger.annotations.Api;
@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(description = "电话本管理接口")
 @RequestMapping("/xboot/sdLoanTelephonebook")
 @Transactional
-public class SdLoanTelephonebookController extends XbootBaseController<SdLoanTelephonebook, String> {
+public class SdLoanTelephonebookController extends BaseController<SdLoanTelephonebook, String> {
 
     @Autowired
     private SdLoanTelephonebookService sdLoanTelephonebookService;

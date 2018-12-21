@@ -1,6 +1,6 @@
 package cn.exrick.xboot.modules.base.dao;
 
-import cn.exrick.xboot.base.XbootBaseDao;
+import cn.exrick.xboot.base.BaseDao;
 import cn.exrick.xboot.modules.base.entity.Dict;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author Exrick
  */
-public interface DictDao extends XbootBaseDao<Dict, String> {
+public interface DictDao extends BaseDao<Dict, String> {
 
     /**
      * 通过type获取

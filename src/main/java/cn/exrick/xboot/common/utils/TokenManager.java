@@ -1,6 +1,6 @@
 package cn.exrick.xboot.common.utils;
 
-import cn.exrick.xboot.config.enums.EnumHttp403Error;
+import cn.exrick.xboot.config.exception.enums.EnumHttp403Error;
 import cn.exrick.xboot.config.exception.APIException;
 import cn.exrick.xboot.config.redis.RedisService;
 import cn.exrick.xboot.modules.back.entity.SdLoanUser;

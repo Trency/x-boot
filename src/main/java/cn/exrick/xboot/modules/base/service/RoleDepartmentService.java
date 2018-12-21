@@ -1,6 +1,6 @@
 package cn.exrick.xboot.modules.base.service;
 
-import cn.exrick.xboot.base.XbootBaseService;
+import cn.exrick.xboot.base.BaseService;
 import cn.exrick.xboot.modules.base.entity.RoleDepartment;
 
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.List;
  *
  * @author Exrick
  */
-public interface RoleDepartmentService extends XbootBaseService<RoleDepartment, String> {
+public interface RoleDepartmentService extends BaseService<RoleDepartment, String> {
 
     /**
      * 通过roleId获取

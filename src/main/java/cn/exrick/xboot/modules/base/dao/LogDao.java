@@ -1,6 +1,6 @@
 package cn.exrick.xboot.modules.base.dao;
 
-import cn.exrick.xboot.base.XbootBaseDao;
+import cn.exrick.xboot.base.BaseDao;
 import cn.exrick.xboot.modules.base.entity.Log;
 
 /**
@@ -8,6 +8,6 @@ import cn.exrick.xboot.modules.base.entity.Log;
  *
  * @author Exrickx
  */
-public interface LogDao extends XbootBaseDao<Log, String> {
+public interface LogDao extends BaseDao<Log, String> {
 
 }

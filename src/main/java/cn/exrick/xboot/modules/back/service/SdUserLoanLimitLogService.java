@@ -1,6 +1,6 @@
 package cn.exrick.xboot.modules.back.service;
 
-import cn.exrick.xboot.base.XbootBaseService;
+import cn.exrick.xboot.base.BaseService;
 import cn.exrick.xboot.modules.back.entity.SdUserLoanLimitLog;
 
 /**
@@ -8,6 +8,6 @@ import cn.exrick.xboot.modules.back.entity.SdUserLoanLimitLog;
  *
  * @author
  */
-public interface SdUserLoanLimitLogService extends XbootBaseService<SdUserLoanLimitLog, String> {
+public interface SdUserLoanLimitLogService extends BaseService<SdUserLoanLimitLog, String> {
 
 }

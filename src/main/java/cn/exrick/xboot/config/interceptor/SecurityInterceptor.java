@@ -4,7 +4,7 @@ package cn.exrick.xboot.config.interceptor;
 import cn.exrick.xboot.common.annotation.LoginRequired;
 import cn.exrick.xboot.common.utils.TokenManager;
 import cn.exrick.xboot.common.utils.WebContextHolder;
-import cn.exrick.xboot.config.enums.EnumHttp401Error;
+import cn.exrick.xboot.config.exception.enums.EnumHttp401Error;
 import cn.exrick.xboot.config.exception.APIException;
 import cn.exrick.xboot.config.redis.RedisService;
 import io.jsonwebtoken.Claims;

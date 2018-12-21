@@ -13,9 +13,9 @@ import java.util.List;
  */
 // JDK8函数式接口注解 仅能包含一个抽象方法
 @FunctionalInterface
-public interface XbootBaseService<E, ID extends Serializable> {
+public interface BaseService<E, ID extends Serializable> {
 
-    XbootBaseDao<E, ID> getRepository();
+    BaseDao<E, ID> getRepository();
 
     /**
      * 根据ID获取

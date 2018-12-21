@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * @author Exrickx
  */
-public abstract class XbootBaseController<E, ID extends Serializable> {
+public abstract class BaseController<E, ID extends Serializable> {
 
     /**
      * 获取service
@@ -23,7 +23,7 @@ public abstract class XbootBaseController<E, ID extends Serializable> {
      * @return
      */
     @Autowired
-    public abstract XbootBaseService<E, ID> getService();
+    public abstract BaseService<E, ID> getService();
 
     @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
     @ResponseBody

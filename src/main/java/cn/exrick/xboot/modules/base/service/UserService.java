@@ -1,7 +1,7 @@
 package cn.exrick.xboot.modules.base.service;
 
 
-import cn.exrick.xboot.base.XbootBaseService;
+import cn.exrick.xboot.base.BaseService;
 import cn.exrick.xboot.common.vo.SearchVo;
 import cn.exrick.xboot.modules.base.entity.User;
 import org.springframework.cache.annotation.CacheConfig;
@@ -17,7 +17,7 @@ import java.util.List;
  * @author Exrickx
  */
 @CacheConfig(cacheNames = "user")
-public interface UserService extends XbootBaseService<User, String> {
+public interface UserService extends BaseService<User, String> {
 
     /**
      * 通过用户名获取用户

@@ -1,6 +1,6 @@
 package cn.exrick.xboot.modules.base.service;
 
-import cn.exrick.xboot.base.XbootBaseService;
+import cn.exrick.xboot.base.BaseService;
 import cn.exrick.xboot.modules.base.entity.Department;
 
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.List;
  *
  * @author Exrick
  */
-public interface DepartmentService extends XbootBaseService<Department, String> {
+public interface DepartmentService extends BaseService<Department, String> {
 
     /**
      * 通过父id获取 升序

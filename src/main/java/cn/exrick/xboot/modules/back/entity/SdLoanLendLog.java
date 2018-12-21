@@ -26,12 +26,26 @@ public class SdLoanLendLog extends BaseEntity {
     @TableId
     @ApiModelProperty(value = "贷款操作表id，唯一标识")
     private String lendLogId = String.valueOf(SnowFlakeUtil.getFlowIdInstance().nextId());
-    private String lendOrderNo;        // 贷款流水号
-    private String lendId;        // 贷款ID
-    private String beforeJson;        // 操作前json
-    private String afterJson;        // 操作后json
-    private String operateUserId;        // 操作人Id
-    private String operateUserType;        // 操作人类型
-    private String operateType;        // 操作类型
+
+    @ApiModelProperty(value = "贷款流水号")
+    private String lendOrderNo;
+
+    @ApiModelProperty(value = "贷款ID")
+    private String lendId;
+
+    @ApiModelProperty(value = "操作前json")
+    private String beforeJson;
+
+    @ApiModelProperty(value = "操作后json")
+    private String afterJson;
+
+    @ApiModelProperty(value = "操作人Id")
+    private String operateUserId;
+
+    @ApiModelProperty(value = "操作人类型")
+    private String operateUserType;
+
+    @ApiModelProperty(value = "操作类型")
+    private String operateType;
 
 }

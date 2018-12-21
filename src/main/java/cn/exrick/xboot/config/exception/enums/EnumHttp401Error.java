@@ -1,4 +1,4 @@
-package cn.exrick.xboot.config.enums;
+package cn.exrick.xboot.config.exception.enums;
 
 public enum EnumHttp401Error implements IEnumError {
 

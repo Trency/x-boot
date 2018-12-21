@@ -1,6 +1,6 @@
 package cn.exrick.xboot.modules.back.controller;
 
-import cn.exrick.xboot.base.XbootBaseController;
+import cn.exrick.xboot.base.BaseController;
 import cn.exrick.xboot.modules.back.entity.SdLoanUserRelationship;
 import cn.exrick.xboot.modules.back.service.SdLoanUserRelationshipService;
 import io.swagger.annotations.Api;
@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(description = "联系人表管理接口")
 @RequestMapping("/xboot/sdLoanUserRelationship")
 @Transactional
-public class SdLoanUserRelationshipController extends XbootBaseController<SdLoanUserRelationship, String> {
+public class SdLoanUserRelationshipController extends BaseController<SdLoanUserRelationship, String> {
 
     @Autowired
     private SdLoanUserRelationshipService sdLoanUserRelationshipService;

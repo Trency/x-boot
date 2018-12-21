@@ -1,6 +1,6 @@
 package cn.exrick.xboot.modules.base.dao;
 
-import cn.exrick.xboot.base.XbootBaseDao;
+import cn.exrick.xboot.base.BaseDao;
 import cn.exrick.xboot.modules.base.entity.Permission;
 
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.List;
  *
  * @author Exrick
  */
-public interface PermissionDao extends XbootBaseDao<Permission, String> {
+public interface PermissionDao extends BaseDao<Permission, String> {
 
     /**
      * 通过层级查找

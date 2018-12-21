@@ -1,7 +1,7 @@
 package cn.exrick.xboot.modules.base.service;
 
 
-import cn.exrick.xboot.base.XbootBaseService;
+import cn.exrick.xboot.base.BaseService;
 import cn.exrick.xboot.modules.base.entity.UserRole;
 
 import java.util.List;
@@ -11,7 +11,7 @@ import java.util.List;
  *
  * @author Exrickx
  */
-public interface UserRoleService extends XbootBaseService<UserRole, String> {
+public interface UserRoleService extends BaseService<UserRole, String> {
 
     /**
      * 通过roleId查找

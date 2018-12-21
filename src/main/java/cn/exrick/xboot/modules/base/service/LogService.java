@@ -1,7 +1,7 @@
 package cn.exrick.xboot.modules.base.service;
 
 
-import cn.exrick.xboot.base.XbootBaseService;
+import cn.exrick.xboot.base.BaseService;
 import cn.exrick.xboot.common.vo.SearchVo;
 import cn.exrick.xboot.modules.base.entity.Log;
 import org.springframework.data.domain.Page;
@@ -12,7 +12,7 @@ import org.springframework.data.domain.Pageable;
  *
  * @author Exrickx
  */
-public interface LogService extends XbootBaseService<Log, String> {
+public interface LogService extends BaseService<Log, String> {
 
     /**
      * 分页搜索获取日志

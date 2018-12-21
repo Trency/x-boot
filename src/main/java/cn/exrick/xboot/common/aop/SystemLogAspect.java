@@ -38,7 +38,7 @@ import java.util.Map;
 @Slf4j
 public class SystemLogAspect {
 
-    private static final ThreadLocal<Date> beginTimeThreadLocal = new NamedThreadLocal<Date>("ThreadLocal beginTime");
+    private static final ThreadLocal<Date> beginTimeThreadLocal = new NamedThreadLocal<>("ThreadLocal beginTime");
 
     @Value("${xboot.logRecord.es}")
     private Boolean esRecord;
@@ -212,11 +212,13 @@ public class SystemLogAspect {
      */
     public static Map<String, Object> getControllerMethodInfo(JoinPoint joinPoint) throws Exception {
 
-        Map<String, Object> map = new HashMap<String, Object>(16);
+        Map<String, Object> map = new HashMap<>(16);
         //获取目标类名
         String targetName = joinPoint.getTarget().getClass().getName();
         //获取方法名
         String methodName = joinPoint.getSignature().getName();
+
+
         //获取相关参数
         Object[] arguments = joinPoint.getArgs();
         //生成类对象
@@ -224,8 +226,8 @@ public class SystemLogAspect {
         //获取该类中的方法
         Method[] methods = targetClass.getMethods();
 
-        String description = "";
-        Integer type = null;
+        String description;
+        Integer type;
 
         for (Method method : methods) {
             if (!method.getName().equals(methodName)) {

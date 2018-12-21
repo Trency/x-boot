@@ -1,6 +1,6 @@
 package cn.exrick.xboot.modules.back.service;
 
-import cn.exrick.xboot.base.XbootBaseService;
+import cn.exrick.xboot.base.BaseService;
 import cn.exrick.xboot.modules.back.entity.SdLoanRepayment;
 
 /**
@@ -8,6 +8,6 @@ import cn.exrick.xboot.modules.back.entity.SdLoanRepayment;
  *
  * @author
  */
-public interface SdLoanRepaymentService extends XbootBaseService<SdLoanRepayment, String> {
+public interface SdLoanRepaymentService extends BaseService<SdLoanRepayment, String> {
 
 }

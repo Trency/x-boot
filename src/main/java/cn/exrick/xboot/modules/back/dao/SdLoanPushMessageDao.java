@@ -1,6 +1,6 @@
 package cn.exrick.xboot.modules.back.dao;
 
-import cn.exrick.xboot.base.XbootBaseDao;
+import cn.exrick.xboot.base.BaseDao;
 import cn.exrick.xboot.modules.back.entity.SdLoanPushMessage;
 
 /**
@@ -8,6 +8,6 @@ import cn.exrick.xboot.modules.back.entity.SdLoanPushMessage;
  *
  * @author
  */
-public interface SdLoanPushMessageDao extends XbootBaseDao<SdLoanPushMessage, String> {
+public interface SdLoanPushMessageDao extends BaseDao<SdLoanPushMessage, String> {
 
 }

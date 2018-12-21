@@ -1,6 +1,6 @@
 package cn.exrick.xboot.modules.base.dao;
 
-import cn.exrick.xboot.base.XbootBaseDao;
+import cn.exrick.xboot.base.BaseDao;
 import cn.exrick.xboot.modules.base.entity.RolePermission;
 
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.List;
  *
  * @author Exrick
  */
-public interface RolePermissionDao extends XbootBaseDao<RolePermission, String> {
+public interface RolePermissionDao extends BaseDao<RolePermission, String> {
 
     /**
      * 通过permissionId获取

@@ -28,25 +28,64 @@ public class SdLoanRepayment extends BaseEntity {
     @ApiModelProperty(value = "还款表id，唯一标识")
     private String repaymentId = String.valueOf(SnowFlakeUtil.getFlowIdInstance().nextId());
 
-    private String repaymentOrderNo;        // 还款流水号
-    private String userId;        // 所属用户ID
-    private String userName;        // 用户名
-    private String cellphone;        // 手机号
-    private String lendId;        // 贷款ID
-    private String lendOrderNo;        // 贷款流水号
-    private String title;        // 标题
-    private String productId;        // 产品ID
-    private String productName;        // 产品名称
-    private Long repaymentAmount;        // 还款金额
-    private Long interestAmout;        // 利息金额
-    private Long lendAmount;        // 实际贷款金额
-    private Long violateAmount;        // 违约金额
-    private String transactionId;        // 还款交易号
-    private String platformType;        // 还款交易平台： ALIPAY-支付宝, WECHAT-微信, WECHAT_SMALL-微信小程序
-    private String errMsg;        // 错误信息
-    private String errCode;        // 错误code
-    private String sign;        // 签名
-    private Date repaymentTime;        // 还款时间
-    private String terminalType;        // 终端:PC-网页, APP-APP, WECHAT-微信
+    @ApiModelProperty(value = "还款流水号")
+    private String repaymentOrderNo;
+
+    @ApiModelProperty(value = "所属用户ID")
+    private String userId;
+
+    @ApiModelProperty(value = "用户名")
+    private String userName;
+
+    @ApiModelProperty(value = "手机号")
+    private String cellphone;
+
+    @ApiModelProperty(value = "贷款ID")
+    private String lendId;
+
+    @ApiModelProperty(value = "贷款流水号")
+    private String lendOrderNo;
+
+    @ApiModelProperty(value = "标题")
+    private String title;
+
+    @ApiModelProperty(value = "产品ID")
+    private String productId;
+
+    @ApiModelProperty(value = "产品名称")
+    private String productName;
+
+    @ApiModelProperty(value = "还款金额")
+    private Long repaymentAmount;
+
+    @ApiModelProperty(value = "利息金额")
+    private Long interestAmout;
+
+    @ApiModelProperty(value = "实际贷款金额")
+    private Long lendAmount;
+
+    @ApiModelProperty(value = "违约金额")
+    private Long violateAmount;
+
+    @ApiModelProperty(value = "还款交易号")
+    private String transactionId;
+
+    @ApiModelProperty(value = "还款交易平台： ALIPAY-支付宝, WECHAT-微信, WECHAT_SMALL-微信小程序")
+    private String platformType;
+
+    @ApiModelProperty(value = "错误信息")
+    private String errMsg;
+
+    @ApiModelProperty(value = "错误code")
+    private String errCode;
+
+    @ApiModelProperty(value = "签名")
+    private String sign;
+
+    @ApiModelProperty(value = "还款时间")
+    private Date repaymentTime;
+
+    @ApiModelProperty(value = "终端:PC-网页, APP-APP, WECHAT-微信")
+    private String terminalType;
 
 }

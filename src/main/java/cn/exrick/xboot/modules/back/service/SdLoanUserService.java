@@ -1,6 +1,6 @@
 package cn.exrick.xboot.modules.back.service;
 
-import cn.exrick.xboot.base.XbootBaseService;
+import cn.exrick.xboot.base.BaseService;
 import cn.exrick.xboot.modules.back.entity.SdLoanUser;
 
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.List;
  *
  * @author
  */
-public interface SdLoanUserService extends XbootBaseService<SdLoanUser, String> {
+public interface SdLoanUserService extends BaseService<SdLoanUser, String> {
 
     List<SdLoanUser> findByMybatis();
 }

@@ -1,6 +1,6 @@
 package cn.exrick.xboot.modules.back.dao;
 
-import cn.exrick.xboot.base.XbootBaseDao;
+import cn.exrick.xboot.base.BaseDao;
 import cn.exrick.xboot.modules.back.entity.SdUserLoanLimitLog;
 
 /**
@@ -8,6 +8,6 @@ import cn.exrick.xboot.modules.back.entity.SdUserLoanLimitLog;
  *
  * @author
  */
-public interface SdUserLoanLimitLogDao extends XbootBaseDao<SdUserLoanLimitLog, String> {
+public interface SdUserLoanLimitLogDao extends BaseDao<SdUserLoanLimitLog, String> {
 
 }

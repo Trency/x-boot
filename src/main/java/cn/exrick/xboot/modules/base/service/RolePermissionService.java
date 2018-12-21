@@ -1,6 +1,6 @@
 package cn.exrick.xboot.modules.base.service;
 
-import cn.exrick.xboot.base.XbootBaseService;
+import cn.exrick.xboot.base.BaseService;
 import cn.exrick.xboot.modules.base.entity.RolePermission;
 
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.List;
  *
  * @author Exrick
  */
-public interface RolePermissionService extends XbootBaseService<RolePermission, String> {
+public interface RolePermissionService extends BaseService<RolePermission, String> {
 
     /**
      * 通过permissionId获取

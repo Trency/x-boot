@@ -1,7 +1,7 @@
 package cn.exrick.xboot.config.exception;
 
 
-import cn.exrick.xboot.config.enums.IEnumError;
+import cn.exrick.xboot.config.exception.enums.IEnumError;
 
 public class APIException extends RuntimeException {
 

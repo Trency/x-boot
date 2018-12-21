@@ -26,13 +26,29 @@ public class SdUserLoanLimitLog extends BaseEntity {
     @TableId
     @ApiModelProperty(value = "用户贷款额度变动主键，唯一标识")
     private String userLoanLimitLog = String.valueOf(SnowFlakeUtil.getFlowIdInstance().nextId());
-    private String userId;        // 用户主键
-    private String adjustType;        // 调整类型:EnumAdjustType 增加-ADD, 减少-REDUCE
-    private Long amount;        // 调整数量
-    private Long beforeLimit;        // 调整前额度
-    private Long afterLimit;        // 调整后额度
-    private String source;        // 来源
-    private String bizId;        // 业务Id
-    private String bizType;        // 业务类型:贷款-LEND,还款-REPAYMENT,未知:UNKNOWN
+
+    @ApiModelProperty(value = "用户主键")
+    private String userId;
+
+    @ApiModelProperty(value = "调整类型:EnumAdjustType 增加-ADD, 减少-REDUCE")
+    private String adjustType;
+
+    @ApiModelProperty(value = "调整数量")
+    private Long amount;
+
+    @ApiModelProperty(value = "调整前额度")
+    private Long beforeLimit;
+
+    @ApiModelProperty(value = "调整后额度")
+    private Long afterLimit;
+
+    @ApiModelProperty(value = "来源")
+    private String source;
+
+    @ApiModelProperty(value = "业务Id")
+    private String bizId;
+
+    @ApiModelProperty(value = "业务类型:贷款-LEND,还款-REPAYMENT,未知:UNKNOWN")
+    private String bizType;
 
 }

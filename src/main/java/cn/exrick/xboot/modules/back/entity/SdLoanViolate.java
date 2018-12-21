@@ -27,12 +27,25 @@ public class SdLoanViolate extends BaseEntity {
     @ApiModelProperty(value = "违约金表id，唯一标识")
     private String violateId = String.valueOf(SnowFlakeUtil.getFlowIdInstance().nextId());
 
-    private String userId;        // 所属用户ID
-    private String lendId;        // 贷款ID
-    private String lendOrderNo;        // 贷款流水号
-    private Long reviolateAmount;        // 违约金金额
-    private Long beforeReviolateAmount;        // 变动前总违约金金额
-    private Long afterReviolateAmount;        // 变动后总违约金金额
-    private Long lendAmount;        // 实际贷款金额
+    @ApiModelProperty(value = "所属用户ID")
+    private String userId;
+
+    @ApiModelProperty(value = "贷款ID")
+    private String lendId;
+
+    @ApiModelProperty(value = "贷款流水号")
+    private String lendOrderNo;
+
+    @ApiModelProperty(value = "违约金金额")
+    private Long reviolateAmount;
+
+    @ApiModelProperty(value = "变动前总违约金金额")
+    private Long beforeReviolateAmount;
+
+    @ApiModelProperty(value = "变动后总违约金金额")
+    private Long afterReviolateAmount;
+
+    @ApiModelProperty(value = "实际贷款金额")
+    private Long lendAmount;
 
 }

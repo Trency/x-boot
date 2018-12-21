@@ -1,5 +1,6 @@
-package cn.exrick.xboot.config.exception;
+package cn.exrick.xboot.config.interceptor;
 
+import cn.exrick.xboot.common.utils.ResultUtil;
 import cn.exrick.xboot.common.vo.Result;
 import cn.hutool.json.JSONUtil;
 import org.slf4j.Logger;
@@ -15,7 +16,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
 import java.io.File;
 
-@RestControllerAdvice("com.sudao.modules.front")
+@RestControllerAdvice("com.sudao")
 public class GlobalResponseBodyHandler implements ResponseBodyAdvice<Object> {
 
     private static final Logger logger = LoggerFactory.getLogger(GlobalResponseBodyHandler.class);
@@ -37,12 +38,8 @@ public class GlobalResponseBodyHandler implements ResponseBodyAdvice<Object> {
             return body;
         } else {
             logger.debug("MyResponseBodyAdvice==>beforeBodyWrite:" + returnType + "," + body);
-            Result result = new Result();
-            result.setResult(body);
-            if (body instanceof String) {
-                return JSONUtil.toJsonStr(result);
-            }
-            return result;
+            Result<Object> result = ResultUtil.data(body);
+            return (body instanceof String) ? JSONUtil.toJsonStr(result) : result;
         }
     }
 }

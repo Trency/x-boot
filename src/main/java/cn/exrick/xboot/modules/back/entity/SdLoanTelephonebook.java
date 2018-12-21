@@ -27,11 +27,22 @@ public class SdLoanTelephonebook extends BaseEntity {
     @ApiModelProperty(value = "电话本表id，唯一标识")
     private String telephonebookId = String.valueOf(SnowFlakeUtil.getFlowIdInstance().nextId());
 
-    private String cellphone;        // 电话
-    private String userId;        // 所属用户ID
-    private String contactTelephone;        // 联系人电话
-    private String contactName;        // 标题
-    private String bizId;        // 业务Id
-    private String bizType;        // 业务类型:注册-REGIST,申请借款-LEND
+    @ApiModelProperty(value = "电话")
+    private String cellphone;
+
+    @ApiModelProperty(value = "所属用户ID")
+    private String userId;
+
+    @ApiModelProperty(value = "联系人电话")
+    private String contactTelephone;
+
+    @ApiModelProperty(value = "标题")
+    private String contactName;
+
+    @ApiModelProperty(value = "业务Id")
+    private String bizId;
+
+    @ApiModelProperty(value = "业务类型:注册-REGIST,申请借款-LEND")
+    private String bizType;
 
 }
